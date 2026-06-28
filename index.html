@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Film</title>
+    <style>
+        /* 1. RESET & BASE STYLE (Pengaturan Dasar) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #e8f5e9; /* Hijau muda/mint pastel yang sangat lembut dan segar */
+            color: #2e4a3f;            /* Teks hijau gelap keabuan agar kontras dan mudah dibaca */
+            line-height: 1.6;
+        }
+
+        /* 2. HEADER STYLE (DIPERBARUI) */
+        header {
+            background-color: #ffffff; /* Putih bersih */
+            padding: 20px 40px;
+            border-bottom: 4px solid #2ecc71; /* Garis pembatas hijau cerah */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            
+            /* Menggunakan Flexbox agar elemen di dalamnya sejajar menyamping */
+            display: flex;
+            justify-content: space-between; /* Membuat logo kiri di ujung kiri, logo kanan di ujung kanan */
+            align-items: center; /* Membuat semua elemen rata tengah secara vertikal */
+        }
+        
+        /* Mengatur area teks di tengah header */
+        .header-title {
+            text-align: center;
+            flex-grow: 1; /* Mengisi ruang tengah agar teks tetap presisi di tengah */
+        }
+        
+        .header-title h1 {
+            color: #0a9611; /* Hijau cerah kontras */
+            letter-spacing: 1px;
+            font-weight: 800;
+            font-size: 2rem;
+        }
+
+        .header-title p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Mengatur ukuran dan batas maksimum logo agar proporsional */
+        .header-logo {
+            display: flex;
+            align-items: center;
+            max-width: 80px; /* Batasi lebar maksimal area logo */
+        }
+
+        .header-logo img {
+            width: 100%; /* Gambar akan mengikuti lebar pembungkusnya */
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* 3. LAYOUT & CONTAINER (Bungkus Konten) */
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background-color: #ffffff; /* Box utama putih bersih agar terkesan rapi */
+            border: 1px solid #c8e6c9; /* Frame tipis hijau super muda */
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(46, 204, 113, 0.15); /* Bayangan hijau halus */
+            text-align: center;
+        }
+        .intro-box h2 {
+            color: #27ae60; /* Hijau daun medium yang tegas */
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        /* 4. BUTTON STYLE (Tombol Interaktif) */
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2ecc71; /* Tombol hijau cerah */
+            color: #ffffff;            /* Teks tombol putih bersih */
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 25px; 
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            transition: all 0.3s ease; /* Efek transisi halus */
+        }
+        .btn-primary:hover {
+            background-color: #27ae60; /* Hijau sedikit lebih gelap saat kursor lewat */
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+            transform: translateY(-2px); /* Efek tombol naik sedikit */
+        }
+
+        /* Tambahan perbaikan kecil untuk galeri portofolio */
+        .portfolio-item img {
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-logo">
+            <img src="gallery/logo.png" alt="Logo Kiri">
+        </div>
+        
+        <div class="header-title">
+            <h1>WEB KATALOG FILM</h1>
+            <p>Platform Informasi & Pemesanan Tiket Film Terkini</p>
+        </div>
+
+        <div class="header-logo">
+            <img src="gallery/logo2.png" alt="Logo Kanan">
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro-box">
+            <h2>SELAMAT DATANG</h2>
+            <a href="home-237.html" class="btn-primary">Klik disini</a>
+        </section>
+
+<br><br>
+
+<section>
+<div class="col-md-4">
+<div class="portfolio-item">
+    <img src="gallery/foto1.jpeg" alt="Project 1" width="50%">
+    <h5 class="mt-3 fw-semibold"> Sinopsis Film Avengers : Endgame</h5>
+    <p>Setelah Thanos berhasil melenyapkan setengah dari semua kehidupan di alam semesta menggunakan Infinity Stones,
+    para anggota Avengers yang tersisa dan sekutu mereka harus bersatu kembali. Mereka menyusun rencana perjalanan waktu (time heist)
+    untuk mengumpulkan kembali batu-batu tersebut dari masa lalu guna membatalkan tindakan Thanos dan mengembalikan kedamaian di alam semesta.</p>
+</div>
+</div>
+            
+<br>
+            
+<div class="col-md-4">
+<div class="portfolio-item">
+    <img src="gallery/foto2.jpg" alt="Project 2" width="50%">
+    <h5 class="mt-3 fw-semibold">Sinopsis Film Avatar: The Way of Water</h5>
+    <p>Berlatar waktu lebih dari satu dekade setelah kejadian film pertama, film ini menceritakan tentang keluarga Jake Sully (Sam Worthington) dan Neytiri (Zoe Saldaña) bersama anak-anak mereka. 
+    Kedamaian mereka kembali terusik saat bangsa manusia (RDA) kembali menginvasi Pandora untuk merebut planet tersebut karena Bumi yang mulai sekarat.
+    Demi melindungi klan hutan mereka dari kejaran musuh lama—Kolonel Miles Quaritch yang dihidupkan kembali dalam tubuh Avatar—Jake terpaksa membawa keluarganya mengungsi.
+    Mereka mencari perlindungan ke wilayah pesisir samudra dan belajar beradaptasi dengan budaya serta gaya hidup klan air bernama Metkayina.</p>
+</div>
+</div>
+            
+<br>
+            
+<div class="col-md-4">
+<div class="portfolio-item">
+    <img src="gallery/foto3.jpeg" alt="Project 3" width="50%">
+    <h5 class="mt-3 fw-semibold">Sinopsis Film Interstellar</h5>
+    <p>Cooper, seorang mantan pilot NASA yang menjadi petani, menemukan pola gravitasi aneh di kamar putrinya, Murph. Petunjuk tersebut menuntunnya ke markas rahasia NASA yang dipimpin oleh Profesor Brand.
+        Umat manusia sedang di ambang kepunahan, dan satu-satunya harapan adalah mengeksplorasi tiga planet potensial di galaksi lain melalui sebuah lubang cacing misterius.
+        Dilema terbesar Cooper adalah ia harus meninggalkan anak-anaknya demi misi yang belum pasti berhasil. Akibat efek dilatasi waktu di dekat lubang hitam bernama Gargantua, waktu berjalan jauh lebih lambat bagi para astronot dibandingkan orang-orang di Bumi.
+        Setiap jam yang mereka habiskan di planet pertama setara dengan 7 tahun waktu di Bumi, membuat Murph tumbuh dewasa mendahului usia ayahnya. Cerita memuncak pada petualangan melintasi dimensi kelima (Tesseract) di mana Cooper berusaha mengirimkan data
+        kuantum ke masa lalu untuk menyelamatkan umat manusia.</p>
+</div>
+</div>
+
+<br>
+            
+<div class="col-md-4">
+<div class="portfolio-item">
+    <img src="gallery/foto4.jpeg" alt="Project 2" width="50%">
+    <h5 class="mt-3 fw-semibold">Sinopsis Film Spider-Man: No Way Home</h5>
+    <p>Cerita bermula setelah identitas Peter Parker (Tom Holland) sebagai Spider-Man dibongkar oleh Mysterio. Merasa hidupnya dan orang-orang terdekatnya hancur akibat sorotan publik, 
+    Peter meminta bantuan Doctor Strange (Benedict Cumberbatch) untuk merapal mantra sihir agar semua orang melupakan identitasnya. Sayangnya, kesalahan saat merapal mantra justru mengacaukan 
+    multiverse dan menarik musuh-musuh Spider-Man dari dimensi lain datang ke dunianya.</p>
+</div>
+</div>
+            
+<br>
+            
+<div class="col-md-4">
+<div class="portfolio-item">
+    <img src="gallery/foto5.jpeg" alt="Project 3" width="50%">
+    <h5 class="mt-3 fw-semibold">Sinopsis Film Aladdin</h5>
+    <p>seorang pemuda jalanan miskin yang tidak sengaja menemukan lampu ajaib berisi Jin yang bisa mengabulkan tiga permintaan.
+    Ia menggunakan kekuatan tersebut untuk menyamar sebagai pangeran demi merebut hati Putri Jasmine dan menggagalkan rencana jahat Wazir Agung Jafar.</p>
+</div>
+</div>
+    </section>
+    </div>
+</body>
+</html>

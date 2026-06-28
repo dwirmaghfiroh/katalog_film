@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Pemesanan Tiket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>KATALOG FILM</h1>
+        <p>Platform Informasi & Pemesanan Tiket Film Terkini</p>
+    </header>
+    
+    <nav>
+        <a href="home-237.html">Beranda</a>
+        <a href="profile-237.html">Profile</a>
+        <a href="transaksi-237.html" class="active">Transaksi</a>
+        <a href="login-237.html">Login</a>
+    </nav>
+
+<div class="container">
+    <h2>Form Transaksi Pembelian Tiket</h2>
+    <form id="ticketForm">
+        <div class="form-group">
+            <label for="buyerName">Nama Pembeli:</label>
+            <input type="text" id="buyerName" required placeholder="Masukkan nama Anda">
+        </div>
+
+<div class="form-group">
+<label for="movieTitle">Pilih Film:</label>
+<select id="movieTitle" required>
+    <option value="" disabled selected>Pilih Film...</option>
+    <option value="Avengers: Endgame">Avengers: Endgame (Rp 50.000)</option>
+    <option value="Avatar: The Way of Water">Avatar: The Way of Water (Rp 55.000)</option>
+    <option value="Interstellar">Interstellar (Rp 45.000)</option>
+    <option value="Spider-Man: No Way Home">Spider-Man: No Way Home (Rp 50.000)</option>
+    <option value="Aladdin">Aladdin (Rp 57.000)</option>
+    </select>
+</div>
+
+<div class="form-group">
+<label for="ticketQty">Jumlah Tiket:</label>
+<input type="number" id="ticketQty" min="1" required value="1">
+</div>
+
+<div class="form-group">
+<label for="studioClass">Kelas Studio:</label>
+<select id="studioClass" required>
+    <option value="" disabled selected>Pilih Kelas...</option>
+    <option value="Regular">Regular (Normal)</option>
+    <option value="IMAX">IMAX (+Rp 25.000)</option>
+    <option value="Premiere">Premiere (+Rp 50.000)</option>
+</select>
+</div>
+
+    <button type="submit" id="btnSubmit">Proses Transaksi</button>
+    </form>
+
+<h2>Daftar Riwayat Transaksi Film</h2>
+<table id="transactionTable">
+    <thead>
+    <tr>
+    <th>No</th>
+    <th>Nama Pembeli</th>
+    <th>Judul Film</th>
+    <th>Kelas</th>
+    <th>Jumlah</th>
+    <th>Total Bayar</th>
+    <th>Aksi</th>
+    </tr>
+    </thead>
+<tbody>
+</tbody>
+</table>
+</div>
+
+    <footer>
+        <p>Dwi R.M (25101170237) - Universitas Pamulang</p>
+    </footer>
+
+    <script>
+        let counter = 1;
+        const prices = {
+            "Avengers: Endgame": 50000,
+            "Avatar: The Way of Water": 55000,
+            "Interstellar": 45000,
+            "Spider-Man: No Way Home": 50000,
+            "Aladdin": 57000
+        };
+        const classAdditional = {
+            "Regular": 0,
+            "IMAX": 25000,
+            "Premiere": 50000
+        };
+
+        // 1. Fungsi untuk menggambar baris data ke dalam tabel HTML
+        function addRowToTable(name, movie, studio, qty, totalPrice, index) {
+            const tableBody = document.querySelector('#transactionTable tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = ` 
+                <td>${counter++}</td>
+                <td>${name}</td>
+                <td>${movie}</td>
+                <td>${studio}</td>
+                <td>${qty}</td>
+                <td>Rp ${totalPrice.toLocaleString('id-ID')}</td>
+                <td> 
+                    <button class="btn-delete" onclick="deleteTransaction(${index})">Hapus</button>
+                </td>
+            `;
+            tableBody.appendChild(newRow);
+        }
+
+        // 2. Ambil dan tampilkan data lama dari localStorage saat halaman di-load/refresh
+        function loadTransactions() {
+            counter = 1;
+            document.querySelector('#transactionTable tbody').innerHTML = '';
+            const savedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+            savedTransactions.forEach((tx, index) => {
+                addRowToTable(tx.name, tx.movie, tx.studio, tx.qty, tx.totalPrice, index);
+            });
+        }
+
+        // Jalankan fungsi load data pertama kali halaman dibuka
+        document.addEventListener('DOMContentLoaded', loadTransactions);
+
+        // 3. Proses saat form di-submit
+        document.getElementById('ticketForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah reload halaman secara default
+
+            const name = document.getElementById('buyerName').value;
+            const movie = document.getElementById('movieTitle').value;
+            const qty = parseInt(document.getElementById('ticketQty').value);
+            const studio = document.getElementById('studioClass').value;
+
+            const basePrice = prices[movie];
+            const additional = classAdditional[studio];
+            const totalPrice = (basePrice + additional) * qty;
+
+            // Simpan data transaksi ke localStorage
+            const savedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+            savedTransactions.push({ name, movie, studio, qty, totalPrice });
+            localStorage.setItem('transactions', JSON.stringify(savedTransactions));
+
+            // Gambar ulang isi tabel
+            loadTransactions();
+
+            // Notifikasi Sukses
+            alert(`Transaksi Berhasil!\n\nNama Pembeli: ${name}\nFilm: ${movie}\nTotal Bayar: Rp ${totalPrice.toLocaleString('id-ID')}`);
+
+            // Reset form input dengan pilihan placeholder yang di-disable
+            document.getElementById('ticketForm').reset();
+            document.getElementById('movieTitle').value = ""; 
+            document.getElementById('studioClass').value = "";
+            document.getElementById('ticketQty').value = 1;
+        });
+
+        // 4. Fungsi untuk menghapus item spesifik berdasarkan indeksnya
+        function deleteTransaction(index) {
+            if (confirm("Apakah Anda yakin ingin menghapus data transaksi ini?")) {
+                let savedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+                savedTransactions.splice(index, 1);
+                localStorage.setItem('transactions', JSON.stringify(savedTransactions));
+                loadTransactions();
+            }
+        }
+    </script>
+</body>
+</html>

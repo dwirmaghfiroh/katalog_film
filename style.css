@@ -1,0 +1,347 @@
+/* style-xxx.css - Tema Perpaduan Hijau Muda, Hijau Tua & Putih */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f9f4; /* Putih bersih dengan sedikit sentuhan mint segar */
+    color: #1b3b22;            /* Hijau tua pekat untuk teks agar mudah dibaca */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #113f1d; /* Hijau tua hutan pekat */
+    padding: 25px;
+    text-align: center;
+    border-bottom: 4px solid #42ba5e; /* Aksen hijau muda cerah */
+}
+
+header h1 {
+    color: #ffffff;            /* Putih bersih agar kontras dengan hijau tua */
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #a3e6b5;            /* Hijau muda pastel hangat */
+    font-size: 14px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #174d25; /* Hijau tua daun */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #ffffff;
+    padding: 14px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: #42ba5e; /* Sorotan Hijau Muda */
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff; /* Putih bersih untuk area konten utama */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(23, 77, 37, 0.08); /* Bayangan halus kehijauan */
+    border: 1px solid #e1ebe2;
+}
+
+h2 {
+    color: #174d25;            /* Hijau tua untuk judul */
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #113f1d; /* Hijau tua serasi dengan header */
+    margin-top: 50px;
+    font-size: 14px;
+    color: #a3e6b5;
+    border-top: 1px solid #174d25;
+}
+
+/* Halaman Beranda & Profile */
+.intro-box, .profile-content {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.intro-box p, .profile-content p {
+    color: #2c5e37;            /* Hijau daun medium */
+    font-size: 16px;
+    text-align: justify;
+}
+
+.feature-list {
+    margin-top: 25px;
+    text-align: left;
+    display: inline-block;
+    background: #f0f7f1;       /* Putih kehijauan sangat muda */
+    padding: 20px 30px;
+    border-radius: 8px;
+    border-left: 4px solid #42ba5e; /* Batas hijau muda cerah */
+}
+
+.feature-list li {
+    margin-bottom: 12px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+    color: #174d25;
+}
+
+.feature-list li::before {
+    content: "•";              /* Karakter formal buletin pembuka */
+    position: absolute;
+    left: 0;
+    color: #42ba5e;            /* Warna hijau muda cerah */
+    font-weight: bold;
+    font-size: 18px;
+    top: -2px;
+}
+
+/* Halaman Transaksi (Form & Tabel) */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+    background: #f0f7f1;       /* Lapisan dasar putih kehijauan */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e1ebe2;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #174d25;
+}
+
+form input, form select {
+    padding: 12px;
+    border: 1px solid #c8dcce;
+    border-radius: 6px;
+    background: #ffffff;       /* Latar input putih bersih */
+    color: #1b3b22;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+    border-color: #42ba5e;     /* Berubah hijau muda saat diklik */
+    box-shadow: 0 0 8px rgba(66, 186, 94, 0.25);
+}
+
+form button {
+    grid-column: span 2;
+    padding: 14px;
+    background-color: #42ba5e; /* Tombol Utama Hijau Muda */
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+form button:hover { 
+    background-color: #349e4e; /* Berubah sedikit lebih tua saat diarahkan cursor */
+    box-shadow: 0 4px 12px rgba(52, 158, 78, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid #e1ebe2;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    background-color: #174d25; /* Header tabel Hijau Tua */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+td {
+    color: #2c5e37;
+}
+
+tr:nth-child(even) {
+    background-color: #f7fbf8; /* Baris selang-seling putih mint tipis */
+}
+
+tr:hover {
+    background-color: rgba(66, 186, 94, 0.08); /* Efek sorot hijau transparan tipis */
+}
+
+/* Halaman Login */
+
+/* Pembungkus luar login agar kartu berada tepat di tengah-tengah secara vertikal & horizontal */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0;
+    min-height: 50vh; /* Memberi ruang tinggi yang cukup agar seimbang */
+}
+
+/* Mengatur desain kotak kartu login (Sign In) */
+.login-card {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px; /* Ukuran lebar kotak ideal untuk form login */
+    box-shadow: 0 10px 25px rgba(23, 77, 37, 0.12); /* Bayangan lembut bernuansa hijau */
+    border: 1px solid #e1ebe2;
+    border-top: 5px solid #174d25; /* Garis dekorasi tebal warna Hijau Tua di atas kartu */
+    text-align: center;
+}
+
+/* Mengatur judul "Sign In" */
+.login-card h2 {
+    color: #174d25;
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Mengubah struktur form login menjadi satu kolom ke bawah */
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;        /* Jarak antar kolom input yang pas */
+    background: none; /* Menghilangkan background transparan bawaan transaksi */
+    padding: 0;       
+    border: none;     
+    width: 100%;
+}
+
+/* Mengatur pembungkus label dan input */
+.login-card .input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+    width: 100%;
+    margin-bottom: 0; /* Mereset margin bawah bawaan transaksi */
+}
+
+/* Menyesuaikan Label (Teks Username / Password) */
+.login-card .input-group label {
+    margin-bottom: 6px; 
+    font-weight: 600;
+    font-size: 14px;    
+    color: #174d25;     /* Hijau tua */
+}
+
+/* Menyesuaikan Kotak Input */
+.login-card .input-group input {
+    width: 100%;
+    padding: 11px 14px; /* Padding yang nyaman untuk mengetik */
+    border: 1px solid #c8dcce;
+    border-radius: 6px;
+    font-size: 14px;    
+    background-color: #ffffff;
+    color: #1b3b22;     /* PERBAIKAN: Mengubah merah marun (#881818) menjadi hijau tua pekat */
+    transition: all 0.3s ease;
+}
+
+/* Efek interaktif saat kotak input diklik/fokus */
+.login-card .input-group input:focus {
+    outline: none;
+    border-color: #42ba5e; /* Berubah menjadi hijau muda cerah */
+    box-shadow: 0 0 8px rgba(66, 186, 94, 0.2);
+}
+
+/* Merapikan Tombol Login */
+.login-card .btn-login {
+    width: 100%;
+    padding: 12px;      /* Ketebalan tombol yang proporsional */
+    margin-top: 10px;
+    background-color: #174d25; /* Hijau tua */
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(23, 77, 37, 0.15);
+}
+
+.login-card .btn-login:hover {
+    background-color: #42ba5e; /* Berubah hijau muda */
+    box-shadow: 0 4px 12px rgba(66, 186, 94, 0.3);
+    transform: translateY(-1px); /* Efek terangkat sedikit yang halus */
+}
+
+/* Gaya teks pesan error jika inputan kosong */
+.login-card .error-msg {
+    color: #cc3333; /* Merah tegas penanda error */
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 500;
+    display: none; /* Tetap tersembunyi sebelum divalidasi JS */
+}
+
+/* Tambahan style opsional agar tombol hapus terlihat estetik dan pas dengan tema pastel */
+.btn-delete {
+    background-color: #ff9aa2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+.btn-delete:hover {
+    background-color: #ff6b6b;
+}

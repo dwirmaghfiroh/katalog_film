@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Katalog Film</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>KATALOG FILM</h1>
+        <p>Platform Informasi & Pemesanan Tiket Film Terkini</p>
+    </header>
+
+    <nav>
+        <a href="home-237.html">Beranda</a>
+        <a href="profile-237.html">Profile</a>
+        <a href="transaksi-237.html">Transaksi</a>
+        <a href="login-237.html" class="active">Login</a>
+    </nav>
+
+<div class="container">
+    <div class="login-wrapper">
+    <div class="login-card">
+    <h2>Sign In</h2>
+    <form id="loginForm">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Masukkan username">
+        <div id="usernameError" class="error-msg">Username tidak boleh kosong!</div>
+        </div>
+            <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan password">
+            <div id="passwordError" class="error-msg">Password tidak boleh kosong!</div>
+            </div>
+            <button type="submit" class="btn-login">Login</button>
+    </form>
+        </div>
+        </div>
+        </div>
+
+    <footer>
+        <p> Dwi R.M (25101170237) - Universitas Pamulang</p>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const usernameInput = document.getElementById('username').value.trim();
+            const passwordInput = document.getElementById('password').value.trim();
+            
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+            
+            let isValid = true;
+
+            if (usernameInput === "") {
+                usernameError.style.display = "block";
+                isValid = false;
+            } else {
+                usernameError.style.display = "none";
+            }
+
+            if (passwordInput === "") {
+                passwordError.style.display = "block";
+                isValid = false;
+            } else {
+                passwordError.style.display = "none";
+            }
+
+            if (isValid) {
+                alert("Login berhasil! Selamat datang, " + usernameInput);
+                document.getElementById('loginForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
